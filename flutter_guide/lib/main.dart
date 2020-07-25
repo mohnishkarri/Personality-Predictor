@@ -19,17 +19,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
-  void _answerQuestion() {
-    setState(() {
-      _questionIndex = _questionIndex + 1;
-    });
-
-    print(_questionIndex);
-  }
-
-  Widget build(BuildContext context) {
-    const questions = const[
+  //static const questions = const[ |next line concept is also fine
+    final  questions = const[
       {
         'questionText': 'What\'s your favourite color?',
         'answers': ['Black', 'Red', 'Green', 'White'],
@@ -44,6 +35,27 @@ class _MyAppState extends State<MyApp> {
       },
 
     ];
+  var _questionIndex = 0;
+  //var aBool=true;
+ // aBool=false;  dart method
+  void _answerQuestion() {
+
+    
+
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+
+    print(_questionIndex);
+    if(_questionIndex < questions.length){
+
+      print('We have more Question');
+
+    }
+  }
+
+  Widget build(BuildContext context) {
+    
     // questions=[]; This does not work if questions is a const
     //var dummy=['hello']; if const then not possible
     //dummy.add('Max');
