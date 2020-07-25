@@ -31,15 +31,15 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     const questions = const[
       {
-        'questionText': 'What\s your favourite color?',
+        'questionText': 'What\'s your favourite color?',
         'answers': ['Black', 'Red', 'Green', 'White'],
       },
       {
-        'questionText': 'What\s your favourite animal? ?',
+        'questionText': 'What\'s your favourite animal? ?',
         'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
       },
       {
-        'questionText': 'Who\s your favourite instructor?',
+        'questionText': 'Who\'s your favourite instructor?',
         'answers': ['Max', 'Lax', 'Snak', 'Back'],
       },
       
