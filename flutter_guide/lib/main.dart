@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_guide/question.dart';
+// ignore: unused_import
+import 'package:flutter_guide/answer.dart';
 //void main(){
 
 //  runApp(MyApp());
@@ -41,27 +43,12 @@ class MyAppState extends State<MyApp> {
             Question(
               questions[questionIndex],
             ),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: _answerQuestion,
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () => print('Answer 2 chosen'),
-            ),
-            RaisedButton(
-                child: Text('Answer 3'),
-                onPressed: () {
-                  print('Answer 3 chosen');
-                }),
-            RaisedButton(
-              child: Text('Answer 4'),
-              onPressed: () {
-                print('Answer 4 chosen');
-              },
-            ),
+            Answer(),
+            Answer(),
+            Answer(),
+            Answer(),
           ],
-        ),
+        ), 
       ),
     );
   }
