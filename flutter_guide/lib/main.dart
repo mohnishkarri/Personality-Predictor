@@ -14,11 +14,11 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
   var questionIndex = 0;
   void _answerQuestion() {
     setState(() {
@@ -43,10 +43,10 @@ class MyAppState extends State<MyApp> {
             Question(
               questions[questionIndex],
             ),
-            Answer(),
-            Answer(),
-            Answer(),
-            Answer(),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ), 
       ),
