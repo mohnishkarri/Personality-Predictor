@@ -42,8 +42,13 @@ class _MyAppState extends State<MyApp> {
         'questionText': 'Who\'s your favourite instructor?',
         'answers': ['Max', 'Lax', 'Snak', 'Back'],
       },
-      
+
     ];
+    // questions=[]; This does not work if questions is a const
+    //var dummy=['hello']; if const then not possible
+    //dummy.add('Max');
+    //print(dummy);
+    // dummy=[] allow to assign new values
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
