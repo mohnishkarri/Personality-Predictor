@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   var questionIndex = 0;
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
       questionIndex = questionIndex + 1;
     });
@@ -28,8 +28,8 @@ class MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     var questions = [
-      'what\s your favourite color?',
-      'what\s your favourite animal? '
+      'What\s your favourite color?',
+      'What\s your favourite animal? '
     ];
     return MaterialApp(
       home: Scaffold(
@@ -43,7 +43,7 @@ class MyAppState extends State<MyApp> {
             ),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
             ),
             RaisedButton(
               child: Text('Answer 2'),
