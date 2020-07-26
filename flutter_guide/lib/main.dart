@@ -20,42 +20,37 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   //static const questions = const[ |next line concept is also fine
-    final  questions = const[
-      {
-        'questionText': 'What\'s your favourite color?',
-        'answers': ['Black', 'Red', 'Green', 'White'],
-      },
-      {
-        'questionText': 'What\'s your favourite animal? ?',
-        'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
-      },
-      {
-        'questionText': 'Who\'s your favourite instructor?',
-        'answers': ['Max', 'Lax', 'Snak', 'Back'],
-      },
-
-    ];
+  final questions = const [
+    {
+      'questionText': 'What\'s your favourite color?',
+      'answers': ['Black', 'Red', 'Green', 'White'],
+    },
+    {
+      'questionText': 'What\'s your favourite animal? ?',
+      'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
+    },
+    {
+      'questionText': 'Who\'s your favourite instructor?',
+      'answers': ['Max', 'Lax', 'Snak', 'Back'],
+    },
+  ];
   var _questionIndex = 0;
   //var aBool=true;
- // aBool=false;  dart method
+  // aBool=false;  dart method
   void _answerQuestion() {
-
-    
-
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
 
     print(_questionIndex);
-    if(_questionIndex < questions.length){
-
+    if (_questionIndex < questions.length) {
       print('We have more Question');
-
+    } else {
+      print('No more questions');
     }
   }
 
   Widget build(BuildContext context) {
-    
     // questions=[]; This does not work if questions is a const
     //var dummy=['hello']; if const then not possible
     //dummy.add('Max');
@@ -66,18 +61,21 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Personality Predictor'),
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'],
-            ),
-            ...(questions[_questionIndex]['answers']as List<String>).map((answer){
-
-                  return Answer(_answerQuestion,answer);
-
-             }).toList()
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(
+                    questions[_questionIndex]['questionText'],
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: Text('You did it!'),
+              ),
       ),
     );
   }
